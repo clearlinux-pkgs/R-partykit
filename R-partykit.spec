@@ -4,7 +4,7 @@
 #
 Name     : R-partykit
 Version  : 1.2.0
-Release  : 2
+Release  : 3
 URL      : https://cran.r-project.org/src/contrib/partykit_1.2-0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/partykit_1.2-0.tar.gz
 Summary  : A Toolkit for Recursive Partytioning
@@ -20,7 +20,6 @@ Requires: R-libcoin
 Requires: R-mlbench
 Requires: R-party
 Requires: R-pmml
-Requires: R-psychotree
 Requires: R-strucchange
 BuildRequires : R-AER
 BuildRequires : R-Formula
@@ -31,7 +30,6 @@ BuildRequires : R-libcoin
 BuildRequires : R-mlbench
 BuildRequires : R-party
 BuildRequires : R-pmml
-BuildRequires : R-psychotree
 BuildRequires : R-strucchange
 BuildRequires : clr-R-helpers
 
@@ -60,11 +58,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1521224480
+export SOURCE_DATE_EPOCH=1521224999
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1521224480
+export SOURCE_DATE_EPOCH=1521224999
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
