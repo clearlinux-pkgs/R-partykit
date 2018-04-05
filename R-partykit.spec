@@ -4,7 +4,7 @@
 #
 Name     : R-partykit
 Version  : 1.2.0
-Release  : 3
+Release  : 4
 URL      : https://cran.r-project.org/src/contrib/partykit_1.2-0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/partykit_1.2-0.tar.gz
 Summary  : A Toolkit for Recursive Partytioning
