@@ -1,9 +1,14 @@
 1.2.3
 R-AER
 R-Formula
+R-TH.data
 R-XML
+R-coin
 R-inum
 R-libcoin
 R-mlbench
+R-mvtnorm
 R-party
 R-pmml
+R-randomForest
+R-strucchange

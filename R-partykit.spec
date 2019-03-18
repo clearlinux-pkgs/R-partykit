@@ -4,29 +4,31 @@
 #
 Name     : R-partykit
 Version  : 1.2.3
-Release  : 19
+Release  : 20
 URL      : https://cran.r-project.org/src/contrib/partykit_1.2-3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/partykit_1.2-3.tar.gz
 Summary  : A Toolkit for Recursive Partytioning
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0
 Requires: R-partykit-lib = %{version}-%{release}
-Requires: R-AER
-Requires: R-Formula
-Requires: R-XML
-Requires: R-inum
-Requires: R-libcoin
-Requires: R-mlbench
-Requires: R-party
-Requires: R-pmml
+Requires: R-TH.data
+Requires: R-coin
+Requires: R-mvtnorm
+Requires: R-randomForest
+Requires: R-strucchange
 BuildRequires : R-AER
 BuildRequires : R-Formula
+BuildRequires : R-TH.data
 BuildRequires : R-XML
+BuildRequires : R-coin
 BuildRequires : R-inum
 BuildRequires : R-libcoin
 BuildRequires : R-mlbench
+BuildRequires : R-mvtnorm
 BuildRequires : R-party
 BuildRequires : R-pmml
+BuildRequires : R-randomForest
+BuildRequires : R-strucchange
 BuildRequires : buildreq-R
 
 %description
@@ -54,10 +56,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1549031387
+export SOURCE_DATE_EPOCH=1552880015
 
 %install
-export SOURCE_DATE_EPOCH=1549031387
+export SOURCE_DATE_EPOCH=1552880015
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -93,8 +95,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library partykit|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  partykit || :
 
 
 %files
@@ -140,15 +141,36 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/partykit/help/paths.rds
 /usr/lib64/R/library/partykit/html/00Index.html
 /usr/lib64/R/library/partykit/html/R.css
-/usr/lib64/R/library/partykit/libs/symbols.rds
 /usr/lib64/R/library/partykit/pmml/airq.pmml
 /usr/lib64/R/library/partykit/pmml/bbbc.pmml
 /usr/lib64/R/library/partykit/pmml/iris.pmml
 /usr/lib64/R/library/partykit/pmml/ttnc.pmml
 /usr/lib64/R/library/partykit/pmml/ttnc2.pmml
+/usr/lib64/R/library/partykit/tests/Examples/partykit-Ex.Rout.save
+/usr/lib64/R/library/partykit/tests/bugfixes.R
+/usr/lib64/R/library/partykit/tests/bugfixes.Rout.save
+/usr/lib64/R/library/partykit/tests/regtest-MIA.R
+/usr/lib64/R/library/partykit/tests/regtest-MIA.Rout.save
+/usr/lib64/R/library/partykit/tests/regtest-cforest.R
+/usr/lib64/R/library/partykit/tests/regtest-cforest.Rout.save
+/usr/lib64/R/library/partykit/tests/regtest-ctree.R
+/usr/lib64/R/library/partykit/tests/regtest-ctree.Rout.save
+/usr/lib64/R/library/partykit/tests/regtest-glmtree.R
+/usr/lib64/R/library/partykit/tests/regtest-glmtree.Rout.save
+/usr/lib64/R/library/partykit/tests/regtest-lmtree.R
+/usr/lib64/R/library/partykit/tests/regtest-nmax.R
+/usr/lib64/R/library/partykit/tests/regtest-nmax.Rout.save
+/usr/lib64/R/library/partykit/tests/regtest-node.R
+/usr/lib64/R/library/partykit/tests/regtest-node.Rout.save
+/usr/lib64/R/library/partykit/tests/regtest-party-random.R
+/usr/lib64/R/library/partykit/tests/regtest-party.R
+/usr/lib64/R/library/partykit/tests/regtest-party.Rout.save
+/usr/lib64/R/library/partykit/tests/regtest-split.R
+/usr/lib64/R/library/partykit/tests/regtest-split.Rout.save
+/usr/lib64/R/library/partykit/tests/regtest-weights.R
+/usr/lib64/R/library/partykit/tests/regtest-weights.Rout.save
 
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/R/library/partykit/libs/partykit.so
 /usr/lib64/R/library/partykit/libs/partykit.so.avx2
-/usr/lib64/R/library/partykit/libs/partykit.so.avx512
