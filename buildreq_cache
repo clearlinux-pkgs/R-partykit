@@ -4,6 +4,7 @@ R-Formula
 R-TH.data
 R-XML
 R-coin
+R-colorspace
 R-inum
 R-libcoin
 R-mlbench
@@ -11,4 +12,6 @@ R-mvtnorm
 R-party
 R-pmml
 R-randomForest
+R-sandwich
 R-strucchange
+R-vcd

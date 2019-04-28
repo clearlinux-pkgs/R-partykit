@@ -4,23 +4,22 @@
 #
 Name     : R-partykit
 Version  : 1.2.3
-Release  : 22
+Release  : 23
 URL      : https://cran.r-project.org/src/contrib/partykit_1.2-3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/partykit_1.2-3.tar.gz
 Summary  : A Toolkit for Recursive Partytioning
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0
 Requires: R-partykit-lib = %{version}-%{release}
-Requires: R-TH.data
-Requires: R-coin
-Requires: R-mvtnorm
-Requires: R-randomForest
-Requires: R-strucchange
+Requires: R-colorspace
+Requires: R-sandwich
+Requires: R-vcd
 BuildRequires : R-AER
 BuildRequires : R-Formula
 BuildRequires : R-TH.data
 BuildRequires : R-XML
 BuildRequires : R-coin
+BuildRequires : R-colorspace
 BuildRequires : R-inum
 BuildRequires : R-libcoin
 BuildRequires : R-mlbench
@@ -28,7 +27,9 @@ BuildRequires : R-mvtnorm
 BuildRequires : R-party
 BuildRequires : R-pmml
 BuildRequires : R-randomForest
+BuildRequires : R-sandwich
 BuildRequires : R-strucchange
+BuildRequires : R-vcd
 BuildRequires : buildreq-R
 
 %description
@@ -56,10 +57,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552880015
+export SOURCE_DATE_EPOCH=1556485825
 
 %install
-export SOURCE_DATE_EPOCH=1552880015
+export SOURCE_DATE_EPOCH=1556485825
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -95,7 +96,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  partykit || :
+R CMD check --no-manual --no-examples --no-codoc partykit || :
 
 
 %files
@@ -174,3 +175,4 @@ R CMD check --no-manual --no-examples --no-codoc  partykit || :
 %defattr(-,root,root,-)
 /usr/lib64/R/library/partykit/libs/partykit.so
 /usr/lib64/R/library/partykit/libs/partykit.so.avx2
+/usr/lib64/R/library/partykit/libs/partykit.so.avx512
