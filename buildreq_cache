@@ -1,6 +1,11 @@
-1.2.6
+1.2.7
+R-AER
 R-XML
+R-coin
 R-mlbench
+R-party
 R-pmml
 R-randomForest
+R-sandwich
+R-strucchange
 R-vcd
