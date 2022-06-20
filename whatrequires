@@ -1,5 +1,7 @@
 # This file contains recursive sources that require this package
+R-ATR
 R-C50
 R-betareg
+R-data.tree
 R-tidyrules
 R-trtf
