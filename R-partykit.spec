@@ -4,10 +4,10 @@
 # Using build pattern: R
 #
 Name     : R-partykit
-Version  : 1.2.19
-Release  : 64
-URL      : https://cran.r-project.org/src/contrib/partykit_1.2-19.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/partykit_1.2-19.tar.gz
+Version  : 1.2.20
+Release  : 65
+URL      : https://cran.r-project.org/src/contrib/partykit_1.2-20.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/partykit_1.2-20.tar.gz
 Summary  : A Toolkit for Recursive Partytioning
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0
@@ -51,17 +51,16 @@ lib components for the R-partykit package.
 
 %prep
 %setup -q -n partykit
-cd %{_builddir}/partykit
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1679331252
+export SOURCE_DATE_EPOCH=1681494804
 
 %install
-export SOURCE_DATE_EPOCH=1679331252
+export SOURCE_DATE_EPOCH=1681494804
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -182,7 +181,6 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/partykit/pmml/iris.pmml
 /usr/lib64/R/library/partykit/pmml/ttnc.pmml
 /usr/lib64/R/library/partykit/pmml/ttnc2.pmml
-/usr/lib64/R/library/partykit/tests/Examples/partykit-Ex.Rout.save
 /usr/lib64/R/library/partykit/tests/Rplots.pdf
 /usr/lib64/R/library/partykit/tests/bugfixes.R
 /usr/lib64/R/library/partykit/tests/bugfixes.Rout.save
