@@ -7,7 +7,7 @@
 #
 Name     : R-partykit
 Version  : 1.2.22
-Release  : 71
+Release  : 72
 URL      : https://cran.r-project.org/src/contrib/partykit_1.2-22.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/partykit_1.2-22.tar.gz
 Summary  : A Toolkit for Recursive Partytioning
